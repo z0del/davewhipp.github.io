@@ -2,7 +2,7 @@
 
 David Whipp<br/>
 Associate Professor of Geodynamic Modelling<br>
-[Institute of Seismology](http://www.helsinki.fi/geo/seismo/english/index.html)">, [Department of Geosciences and Geography](http://www.helsinki.fi/geo/english/index.html)<br/>
+[Institute of Seismology](http://www.helsinki.fi/geo/seismo/english/index.html), [Department of Geosciences and Geography](http://www.helsinki.fi/geo/english/index.html)<br/>
 P.O. Box 68 (Gustaf Hällströmin katu 2b)<br/>
 FI-00014 [University of Helsinki](http://www.helsinki.fi/university/)<br/>
 Finland
