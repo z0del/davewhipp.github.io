@@ -1,8 +1,8 @@
-<div style="display:inline-block; vertical-align:top">
-<img src="images/dw_face.jpg" alt="Dave Whipp">
+<div style="display:inline-block; vertical-align:top;">
+  <img src="images/dw_face.jpg" alt="Dave Whipp">
 </div>
 
-<div style="display:inline-block">
+<div style="display:inline-block";>
   <div>David Whipp</div>
   <div>Associate Professor of Geodynamic Modelling</div>
   <div><a href="http://www.helsinki.fi/geo/seismo/english/index.html">Institute of Seismology</a>, <a href="http://www.helsinki.fi/geo/english/index.html">Department of Geosciences and Geography</a></div>
