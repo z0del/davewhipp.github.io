@@ -1,4 +1,4 @@
-<div style="display:inline-block; vertical-align:top;">
+<div style="display:inline-block;vertical-align:top;">
   <img src="images/dw_face.jpg" alt="Dave Whipp">
 </div>
 
