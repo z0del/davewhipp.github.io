@@ -1,4 +1,4 @@
-<img align="left" src="images/dw_face.jpg" alt="Dave Whipp"/>
+<img align="left" src="images/dw_face.jpg" alt="Dave Whipp" hspace="20"/>
 
 David Whipp<br/>
 Associate Professor of Geodynamic Modelling<br/>
