@@ -1,20 +1,16 @@
-<div style="display:inline-block;vertical-align:top;float:left;">
-  <img src="images/dw_face.jpg" alt="Dave Whipp">
-</div>
+<img align=left src="images/dw_face.jpg" alt="Dave Whipp"/>
 
-<div style="display:inline-block;float:right;">
-  <div>David Whipp</div>
-  <div>Associate Professor of Geodynamic Modelling</div>
-  <div><a href="http://www.helsinki.fi/geo/seismo/english/index.html">Institute of Seismology</a>, <a href="http://www.helsinki.fi/geo/english/index.html">Department of Geosciences and Geography</a></div>
-  <div>P.O. Box 68 (Gustaf Hällströmin katu 2b)</div>
-  <div>FI-00014 <a href="http://www.helsinki.fi/university/">University of Helsinki</a></div>
-  <div>Finland</div>
-</div>
+David Whipp<br/>
+Associate Professor of Geodynamic Modelling<br/>
+[Institute of Seismology](http://www.helsinki.fi/geo/seismo/english/index.html), [Department of Geosciences and Geography](http://www.helsinki.fi/geo/english/index.html)<br/>
+P.O. Box 68 (Gustaf Hällströmin katu 2b)<br/>
+FI-00014 [University of Helsinki](http://www.helsinki.fi/university/)<br/>
+Finland
 
 firstname.lastname@helsinki.fi<br/>
-+358 (0)2 941 51617<br/><br/>
++358 (0)2 941 51617
 
-<a href="pdf/whipp_CV.pdf">C.V.</a> (PDF)<br/><br/>
+[C.V.](pdf/whipp_CV.pdf) (PDF)
 
-<a href="https://wiki.helsinki.fi/x/3xjABg">Helsinki University Geodynamics Group (HUGG)</a><br/>
-<a href="http://www.helsinki.fi/geo/staff/whipp/">Department homepage</a>
+[Helsinki University Geodynamics Group (HUGG)](https://wiki.helsinki.fi/x/3xjABg)<br/>
+[Department homepage](http://www.helsinki.fi/geo/staff/whipp/)
