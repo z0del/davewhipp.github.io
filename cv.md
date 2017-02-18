@@ -29,5 +29,5 @@ Research group: [https://wiki.helsinki.fi/x/3xjABg](https://wiki.helsinki.fi/x/3
 ```2013-2018``` &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**Adjunct of the Faculty of Graduate Studies**, *Dept. of Earth Sciences, Dalhousie University*, Halifax, Nova Scotia, Canada<br/>
 ```2009-2012``` &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**Postdoctoral fellow**, *Dept. of Oceanography, Dalhousie University*, Halifax, Nova Scotia, Canada<br/>
 ```2008-2009``` &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**Postdoctoral fellow**, *Géosciences Rennes, University of Rennes 1*, Rennes, France<br/>
-```2007``` &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**Geoscientist (intern)**, *ExxonMobil Exploration Company*, Houston, Texas, USA<br/>
+```2007``` &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**Geoscientist (intern)**, *ExxonMobil Exploration Company*, Houston, Texas, USA<br/>
 ```2003-2008``` &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**Research assistant**, *Dept. of Geological Sciences, University of Michigan*, Ann Arbor, Michigan, USA<br/>
