@@ -35,8 +35,8 @@ kramdown:
 owner:
   name: David Whipp
   avatar: Whipp-face-circle.png
-  job: "Associate professor, Uni. Helsinki"
-  bio: "I like computers, rocks and, nature. <a href='pdf/Whipp_CV.pdf'>C.V.</a>"
+  job: "Computers, rocks, and beer"
+  bio: "I am an Associate Professor of Geodynamic Modelling at the University of Helsinki, Finland. You can find more about me in <a href='pdf/whipp_CV.pdf'>my C.V.</a>."
   email: david.whipp@helsinki.fi
   disqus-shortname:
   twitter: dave_whipp
