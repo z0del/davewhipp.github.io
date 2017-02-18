@@ -4,7 +4,7 @@
 ####################################
 #
 title: David Whipp
-email:
+email: david.whipp@helsinki.fi
 description: David Whipp's personal website
 url: https://davewhipp.github.io # the base hostname & protocol for your site
 
@@ -36,7 +36,7 @@ owner:
   name: David Whipp
   avatar: Whipp-circle.png
   job: "Computers, rocks, and beer"
-  bio: "I am an Associate Professor of Geodynamic Modelling at the <a href='https://www.helsinki.fi/en'>University of Helsinki</a>, Finland."
+  bio: "I am an Associate Professor of Geodynamic Modelling at the University of Helsinki, Finland."
   email: david.whipp@helsinki.fi
   disqus-shortname:
   twitter: dave_whipp
@@ -52,7 +52,7 @@ owner:
   gitlab: #username
   stackoverflow: #123456/username   from a "http://stackoverflow.com/users/123456/username" link
   linkedin: dwhipp #username
-  skype: dwhipp3980 #username
+  skype: #username
   xing: #username
   instagram: #username
   lastfm: #username
