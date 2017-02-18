@@ -36,7 +36,7 @@ owner:
   name: David Whipp
   avatar: Whipp-face-circle.png
   job: "Associate professor, Uni. Helsinki"
-  bio: "I like computers, rocks and, nature. [C.V.](pdf/Whipp_CV.pdf)"
+  bio: "I like computers, rocks and, nature. <a href="pdf/Whipp_CV.pdf">C.V.</a>"
   email: david.whipp@helsinki.fi
   disqus-shortname:
   twitter: dave_whipp
