@@ -39,7 +39,7 @@ Research group: [https://wiki.helsinki.fi/x/3xjABg](https://wiki.helsinki.fi/x/3
 #### Research projects
 ```2014-2018``` &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**Academy Project**, *Academy of Finland*, Finland, 451,763€. Sole PI.<br/>
 ```2014-2017``` &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**Three-Year Research Project**, *University of Helsinki*, Helsinki, Finland, 145,000€. Sole PI.<br/>
-```2014-2017``` &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**ACEnet Research Fellowships Program**, *Atlantic Canada Computational Excellence Network (ACEnet)*, Canada, $40,000 [CAD]. Co-PI with C. Beaumont.
+```2010-2012``` &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**ACEnet Research Fellowships Program**, *Atlantic Canada Computational Excellence Network (ACEnet)*, Canada, $40,000 [CAD]. Co-PI with C. Beaumont.
 
 #### Infrastructure
 ```2016``` &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**Faculty of Science internal infrastructure funding**, *University of Helsinki*, Helsinki, Finland, 90,000€. Sole PI.<br/>
@@ -53,3 +53,11 @@ Research group: [https://wiki.helsinki.fi/x/3xjABg](https://wiki.helsinki.fi/x/3
 ```2003``` &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**Camp Davis Field Geologist Award**, *Dept. of Geological Sciences, University of Michigan*, Ann Arbor, Michigan, USA<br/>
 
 ### Invited Talks
+```2016``` &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**American Geophysical Union Fall Meeting**, *Session T42B: Sedimentary Basin Records of Convergent Orogenic Systems*, San Francisco, California, USA<br/>
+```2016``` &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**University of Potsdam**, *Colloquium talk, Institute of Earth and Environmental Science*, Potsdam, Germany<br/>
+```2014``` &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**American Geophysical Union Fall Meeting**, *Session EP23G: From High Peaks to Level Plains: Using Thermochronometry to Study the Evolving Geosphere*, San Francisco, California, USA<br/>
+```2013``` &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**University of Tübingen**, *Earth System Dynamics Research Group seminar*, Dept. of Geosciences, Tübingen, Germany<br/>
+```2011``` &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**Joseph Fourier University**, *Grand séminaire, Institut des Sciences de la Terre*, Grenoble, France<br/>
+```2009``` &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**Geological Society of America Annual Meeting**, *Session T46: Linking Shallow to Deep Crustal Processes in Arc and Collisional Orogens*, Portland, Oregon, USA<br/>
+```2009``` &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**Joseph Fourier University**, *Seminar talk, Laboratoire de géodynamique des chaînes alpines*, Grenoble, France<br/>
+```2007``` &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**Dalhousie University**, *Department seminar, Dept. of Earth Sciences*, Halifax, Nova Scotia, Canada
