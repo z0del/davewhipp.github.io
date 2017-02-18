@@ -5,8 +5,8 @@
 #
 title: David Whipp
 email:
-description: Associate professor, University of Helsinki
-url: # the base hostname & protocol for your site
+description: David Whipp's personal website
+url: davewhipp.github.io # the base hostname & protocol for your site
 
 
 #
@@ -35,8 +35,8 @@ kramdown:
 owner:
   name: David Whipp
   avatar: Whipp-face-circle.png
-  job: "Associate professor"
-  bio: ""
+  job: "Associate professor of Geodynamic Modelling"
+  bio: "I like computers, rocks and, nature."
   email: david.whipp@helsinki.fi
   disqus-shortname:
   twitter: dave_whipp
@@ -51,8 +51,8 @@ owner:
   github: davewhipp
   gitlab: #username
   stackoverflow: #123456/username   from a "http://stackoverflow.com/users/123456/username" link
-  linkedin: #username
-  skype: dwhipp3980
+  linkedin: dwhipp #username
+  skype: dwhipp3980 #username
   xing: #username
   instagram: #username
   lastfm: #username
@@ -61,7 +61,7 @@ owner:
   foursquare: #username
   steam: #username
   dribbble: #username
-  youtube: #username
+  youtube: IvX6ZFgUP5DgvBSomhz-yw #username
   soundcloud: #username
   weibo: #username
   flickr: #username
