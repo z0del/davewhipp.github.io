@@ -23,7 +23,7 @@ Research group: [https://wiki.helsinki.fi/x/3xjABg](https://wiki.helsinki.fi/x/3
 ```2003-2008``` &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**Ph.D., Geology**, *University of Michigan*, Ann Arbor, MI, USA<br/>
 ```1998-2002``` &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**B.S., Geology** (**Physics minor**), *University of Michigan*, Ann Arbor, MI, USA
 
-### Professional experience
+### Professional appointments
 ```2017-present``` &nbsp;&nbsp;&nbsp;&nbsp;**Associate professor**, *Dept. of Geosciences and Geography, University of Helsinki*, Helsinki, Finland<br/>
 ```2013-2017``` &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**Assistant professor**, *Dept. of Geosciences and Geography, University of Helsinki*, Helsinki, Finland<br/>
 ```2013-2018``` &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**Adjunct of the Faculty of Graduate Studies**, *Dept. of Earth Sciences, Dalhousie University*, Halifax, Nova Scotia, Canada<br/>
@@ -31,3 +31,15 @@ Research group: [https://wiki.helsinki.fi/x/3xjABg](https://wiki.helsinki.fi/x/3
 ```2008-2009``` &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**Postdoctoral fellow**, *Géosciences Rennes, University of Rennes 1*, Rennes, France<br/>
 ```2007``` &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**Geoscientist (intern)**, *ExxonMobil Exploration Company*, Houston, Texas, USA<br/>
 ```2003-2008``` &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**Research assistant**, *Dept. of Geological Sciences, University of Michigan*, Ann Arbor, Michigan, USA<br/>
+
+### Publications (\* = Student as lead author)
+#### In preparation/review
+**D.M. Whipp** and T.A. Ehlers. Quantification of landslide frequency and sediment residence time in the Nepal Himalaya. (In revision)<br/>
+J.M. Schütt\* and **D.M. Whipp**. Controls on continental strain partitioning above an oblique subduction zone, Northern Andes. (In preparation)
+
+#### Peer-reviewed articles
+### Grants
+
+### Awards and Honors
+
+### Invited Talks
