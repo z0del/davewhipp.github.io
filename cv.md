@@ -24,3 +24,10 @@ Research group: [https://wiki.helsinki.fi/x/3xjABg](https://wiki.helsinki.fi/x/3
 ```1998-2002``` &nbsp;&nbsp;&nbsp;&nbsp;**B.S., Geology** (**Physics minor**), *University of Michigan*, Ann Arbor, MI, USA
 
 ### Professional experience
+```2017-present``` &nbsp;&nbsp;**Associate professor**, *Dept. of Geosciences and Geography, University of Helsinki*, Helsinki, Finland<br/>
+```2013-2017``` &nbsp;&nbsp;&nbsp;&nbsp;**Assistant professor**, *Dept. of Geosciences and Geography, University of Helsinki*, Helsinki, Finland<br/>
+Adjunct of the Faculty of Graduate Studies, Dept. of Earth Sciences, Dalhousie University, Halifax, Nova Scotia, Canada.<br/>
+Postdoctoral fellow, Dept. of Oceanography, Dalhousie University, Halifax, Nova Scotia, Canada.<br/>
+Postdoctoral fellow, Géosciences Rennes, University of Rennes 1, Rennes, France.<br/>
+Geoscientist (intern), ExxonMobil Exploration Company, Houston, Texas, USA.<br/>
+Research assistant, Dept. of Geological Sciences, University of Michigan, Ann Arbor, Michigan, USA.<br/>
