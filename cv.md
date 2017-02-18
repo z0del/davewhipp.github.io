@@ -57,7 +57,22 @@ K. W. Huntington, T. A. Ehlers, K. V. Hodges, and **D. M. Whipp**. Topography, e
 
 **D. M. Whipp**, T. A. Ehlers, A. E. Blythe, K. W. Huntington, K. V. Hodges, and D. W. Burbank. Plio-Quaternary exhumation history of the central Nepalese Himalaya: 2. Thermo- kinematic and thermochronometer age prediction model. *Tectonics*, *26*(3), 2007. doi: [10.1029/2006TC001991](http://dx.doi.org/10.1029/2006TC001991).
 
-### Grants
+### Grants (over 5000€)
+#### Research projects
+```2014-2018``` &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**Academy Project**, *Academy of Finland*, Finland, 451,763€. Sole PI.<br/>
+What controls deformation in a ‘bent’ 3D orogen? The effects of spatially variable rock strength, erosion and mass transport on the tectonics of the Bolivian Andes
+
+```2014-2017``` &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**Three-Year Research Project**, *University of Helsinki*, Helsinki, Finland, 145,000€. Sole PI.<br/>
+What controls strain partitioning at obliquely convergent ocean-continent margins? 3D dynamics of crustal deformation along the western Andean margin
+
+```2014-2017``` &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**ACEnet Research Fellowships Program**, *Atlantic Canada Computational Excellence Network (ACEnet)*, Canada, $40,000 [CAD]. Co-PI with C. Beaumont.<br/>
+3-D plateau formation and evolution from numerical model experiments
+
+#### Infrastructure
+```2016``` &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**Faculty of Science internal infrastructure funding**, *University of Helsinki*, Helsinki, Finland, 90,000€. Sole PI.<br/>
+Geosciences high-performance computing cluster (geo-hpcc)
+```2014``` &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**Dept. of Geosciences and Geography internal infrastructure funding**, *University of Helsinki*, Helsinki, Finland, 120,000€. Sole PI.<br/>
+Computational infrastructure for Earth Sciences
 
 ### Awards and Honors
 
