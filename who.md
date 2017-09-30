@@ -10,4 +10,4 @@ My name is Dave. I was born in Pontiac, MI and grew up in Clarkston, MI (see map
 
 When I'm not working, I like to hang out with my wife Alyce and our two goofy kids. If there's any spare time, I enjoy playing ultimate, drinking [good beer](http://dieuduciel.com/en/), biking and music.
 
-<iframe src="https://www.google.com/maps/d/embed?mid=1pL4LQlArLyRtpnEG-mNS-nqjLEU&hl=en" width="640" height="480"></iframe>
+<iframe src="https://www.google.com/maps/d/embed?mid=1pL4LQlArLyRtpnEG-mNS-nqjLEU&hl=en" width="800" height="480"></iframe>
