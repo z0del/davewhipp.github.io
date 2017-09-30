@@ -2,6 +2,8 @@
 layout: page
 title:  Who?
 permalink: /who
+tags:
+- personal
 ---
 ![Dave Whipp](img/dwhipp-lupines.png)
 
