@@ -37,7 +37,7 @@ Research group: [https://wiki.helsinki.fi/x/3xjABg](https://wiki.helsinki.fi/x/3
 
 ### Grants (over 5000€)
 #### Research projects
-```2018-2022``` &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**Academy Project**, *Academy of Finland*, Finland, 599,3713€. Sole PI. (*pending*)<br/>
+```2018-2022``` &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**Academy Project**, *Academy of Finland*, Finland, 599,371€. Sole PI. (*pending*)<br/>
 ```2014-2018``` &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**Academy Project**, *Academy of Finland*, Finland, 451,763€. Sole PI.<br/>
 ```2014-2017``` &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**Three-Year Research Project**, *University of Helsinki*, Helsinki, Finland, 145,000€. Sole PI.<br/>
 ```2010-2012``` &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**ACEnet Research Fellowships Program**, *Atlantic Canada Computational Excellence Network (ACEnet)*, Canada, $40,000 [CAD]. Co-PI with C. Beaumont.
