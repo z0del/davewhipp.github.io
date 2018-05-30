@@ -1,5 +1,5 @@
 ---
-layout: cvpage
+layout: page
 title:  CV
 permalink: /cv
 ---
@@ -20,7 +20,7 @@ Web: [http://www.helsinki.fi/geo/staff/whipp](http://www.helsinki.fi/geo/staff/w
 Research group: [https://wiki.helsinki.fi/x/3xjABg](https://wiki.helsinki.fi/x/3xjABg)
 
 ### Education
-**Ph.D., Geology**, *University of Michigan*, Ann Arbor, MI, USA <span align="right"> ```2003-2008``` </span> <br/>
+```2003-2008``` &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**Ph.D., Geology**, *University of Michigan*, Ann Arbor, MI, USA <br/>
 ```1998-2002``` &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**B.S., Geology** (**Physics minor**), *University of Michigan*, Ann Arbor, MI, USA
 
 ### Professional appointments
