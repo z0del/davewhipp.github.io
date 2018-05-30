@@ -24,7 +24,7 @@ Research group: [https://wiki.helsinki.fi/x/3xjABg](https://wiki.helsinki.fi/x/3
 ```1998-2002``` &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**B.S., Geology** (**Physics minor**), *University of Michigan*, Ann Arbor, MI, USA
 
 ### Professional appointments
-```2017-present``` &nbsp;&nbsp;&nbsp;&nbsp;**Associate professor**, *Dept. of Geosciences and Geography, University of Helsinki*, Helsinki, Finland<br/>
+```2017-present``` &#x09;**Associate professor**, *Dept. of Geosciences and Geography, University of Helsinki*, Helsinki, Finland<br/>
 ```2013-2018``` &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**Adjunct of the Faculty of Graduate Studies**, *Dept. of Earth Sciences, Dalhousie University*, Halifax, Nova Scotia, Canada<br/>
 ```2013-2017``` &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**Assistant professor**, *Dept. of Geosciences and Geography, University of Helsinki*, Helsinki, Finland<br/>
 ```2009-2012``` &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**Postdoctoral fellow**, *Dept. of Oceanography, Dalhousie University*, Halifax, Nova Scotia, Canada<br/>
