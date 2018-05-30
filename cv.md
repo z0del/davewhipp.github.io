@@ -20,7 +20,7 @@ Web: [http://www.helsinki.fi/geo/staff/whipp](http://www.helsinki.fi/geo/staff/w
 Research group: [https://wiki.helsinki.fi/x/3xjABg](https://wiki.helsinki.fi/x/3xjABg)
 
 ### Education
-```2003-2008``` <div>**Ph.D., Geology**, *University of Michigan*, Ann Arbor, MI, USA</div><br/>
+```2003-2008``` <div margin-left: 10px;>**Ph.D., Geology**, *University of Michigan*, Ann Arbor, MI, USA</div><br/>
 ```1998-2002``` &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**B.S., Geology** (**Physics minor**), *University of Michigan*, Ann Arbor, MI, USA
 
 ### Professional appointments
