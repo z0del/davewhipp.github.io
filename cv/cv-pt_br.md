@@ -1,6 +1,6 @@
 ---
 
-layout: default
+layout: page
 
 permalink: cv/cv-pt_br
 
