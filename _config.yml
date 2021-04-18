@@ -29,7 +29,9 @@ kramdown:
 
 
 ###
-cv             :  ['_cv']
+collections:
+  cv:
+    output: true
 #
 ###################################
 # Site Owner configuration
