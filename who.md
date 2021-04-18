@@ -4,7 +4,7 @@ title:  Who?
 permalink: /who
 tags: personal
 ---
-![Dave Whipp](img/dwhipp-lupines.png)
+![myImg](img/Lorem-Ipsum.png)
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod 
 tempor incididunt ut labore et dolore magna aliqua. Posuere ac ut 
