@@ -3,10 +3,10 @@
 # Site wide configuration
 ####################################
 #
-title: David Whipp
-email: david.whipp@helsinki.fi
-description: David Whipp's personal website
-url: https://davewhipp.github.io # the base hostname & protocol for your site
+title: George Lukas
+email: # david.whipp@helsinki.fi
+description: George Lukas's personal website
+url: https://z0del.github.io # the base hostname & protocol for your site
 
 
 #
@@ -33,25 +33,25 @@ kramdown:
 ####################################
 #
 owner:
-  name: David Whipp
-  avatar: Whipp-circle.png
-  job: "Computers, rocks, and beer"
-  bio: "Professor of Geodynamic Modelling at the University of Helsinki, Finland."
-  email: david.whipp@helsinki.fi
+  name: George Lukas
+  avatar: # Whipp-circle.png
+  job: # "Computers, rocks, and beer"
+  bio: # "Professor of Geodynamic Modelling at the University of Helsinki, Finland."
+  email: # david.whipp@helsinki.fi
   disqus-shortname:
-  twitter: dave_whipp
+  twitter: # dave_whipp
   facebook: #username
   google:
     plus: #username
-    analytics: UA-41847639-2
+    analytics: # UA-41847639-2
     verify:
     ad-client:
     ad-slot:
   bing-verify:
-  github: davewhipp
+  github: z0del
   gitlab: #username
   stackoverflow: #123456/username   from a "http://stackoverflow.com/users/123456/username" link
-  linkedin: dwhipp #username
+  linkedin: # dwhipp #username
   skype: #username
   xing: #username
   instagram: #username
