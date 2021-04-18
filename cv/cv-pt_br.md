@@ -1,5 +1,5 @@
 ---
-layout: page
+layout: cv
 ---
 
 # George Lukas
