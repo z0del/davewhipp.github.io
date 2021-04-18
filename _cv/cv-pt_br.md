@@ -1,6 +1,6 @@
 ---
 layout: page
-permalink: /cv-pt_br
+permalink: cv/cv-pt_br
 ---
 
 # George Lukas
