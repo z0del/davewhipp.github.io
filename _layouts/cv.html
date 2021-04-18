@@ -1,23 +1,18 @@
+<!doctype html>
+<html>
 <head>
   <meta charset=utf-8 />
+  <title> CV - {% if page.title %} {{ page.title }}{% endif %} </title>
+  <link href="media/{{ site.style }}-screen.css" type="text/css" rel="stylesheet" media="screen">
+  <link href="media/{{ site.style }}-print.css" type="text/css" rel="stylesheet" media="print">
   <link rel="stylesheet" href="https://cdn.rawgit.com/jpswalsh/academicons/master/css/academicons.min.css">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">     
 </head>
-
-  <div id="page">
-    <header class="page-header">
-      <h2>{{ page.title }}</h2>
-    </header>
-
-    <article class="page-content">
-      {{ content }}
-    </article>
-
-
-  </div><!-- end page content -->
-
-
-  {% if site.owner.disqus-shortname and page.comments == true %}
-  <div id="disqus_thread"></div>
-  {% include disqus.html %}
-  {% endif %}
+<body>
+  <div id="main">
+    <div id="content">
+    {{ content }}
+    </div>
+  </div>
+</body>
+</html>
