@@ -1,5 +1,5 @@
 ---
-layout: page
+layout: cv
 permalink: cv/cv-en_us
 ---
 
