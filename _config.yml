@@ -34,10 +34,10 @@ kramdown:
 #
 owner:
   name: George Lukas
-  avatar: # Whipp-circle.png
-  job: # "Computers, rocks, and beer"
-  bio: # "Professor of Geodynamic Modelling at the University of Helsinki, Finland."
-  email: # david.whipp@helsinki.fi
+  avatar: pp.jpeg
+  job: my job here
+  bio: my bio here
+  email: email@example.com
   disqus-shortname:
   twitter: # dave_whipp
   facebook: #username
