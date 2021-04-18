@@ -29,7 +29,7 @@ kramdown:
 
 
 ###
-cv_dir             :  ['_cv']
+cv             :  ['_cv']
 #
 ###################################
 # Site Owner configuration
