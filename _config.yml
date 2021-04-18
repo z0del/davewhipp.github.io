@@ -27,11 +27,15 @@ kramdown:
   toc_levels: 1..6
   enable_coderay: false
 
-
-###
+#
+###################################
+# Subfolder in /CV
+###################################
+#
 collections:
   cv:
     output: true
+
 #
 ###################################
 # Site Owner configuration
