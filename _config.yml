@@ -29,7 +29,7 @@ kramdown:
 
 
 ###
-exclude             :  ['cv']
+exclude             :  ['cv-en_es']
 #
 ###################################
 # Site Owner configuration
