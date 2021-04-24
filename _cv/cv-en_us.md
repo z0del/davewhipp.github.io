@@ -4,7 +4,7 @@ permalink: cv/cv-en_us
 ---
 
 # George Lukas
-<br/>Cientista de Dados, Callink Serviços <br/>
+Cientista de Dados, Callink Serviços <br/>
 <a href="g.lks@pm.me">g.lks@pm.me</a> 
 <br/>+55 (34) 9 9841 4017
 
