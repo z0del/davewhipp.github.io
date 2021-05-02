@@ -13,6 +13,7 @@ Cientista de Dados, Callink Serviços <br/>
   <a href="https://www.hackerrank.com/z0del"><i class="fas fa-users"></i> www.hackerrank.com/z0del</a>
 </div>
 
+<br>
 ## Educação
 
 `2020-atualmente`
@@ -28,11 +29,13 @@ Cientista de Dados, Callink Serviços <br/>
 `2019-atualmente`
 **Cientista de Dados,**
 *Callink Serviços.*<br/>
-Predictive analysis (Output Maximization / Cost Minimization).
-Modelagem de tópicos usando técnicas de aprendizagem supervisionada como SVM e não supervisionada 
-tais como, Dirichlet-multinomial Mixtures e Latent Dirichlet Allocation. Análise de sentimento usando Lexicon. 
-Automação de serviços por meio do PyTelegram-API. Desenvolvimento e gerenciamento de processos/rotinas com Rapidminer.
-Administração de banco de dados MS-SQL e MySQL. 
+Análise de regressão/modelagem de propensão e tarefas de otimização combinatória para melhoraria de indicadores de desempenho;<br/>
+Desenvolvimento de ferramentas para gerenciamento remoto de tarefas;<br/>
+Desenvolvimento e gerenciamento de processos (ETL);<br/>
+Administração de bancos de dados.<br/>
+
+Tecnologias: Python, sklearn, pyStats, pyTelegram-API, MSSQL, MySQL, jupyter, Rapidminer
+
 
 `2015-2016`
 **Pesquisador (Bolsa FINEP),** *Universidade Federal de Uberlândia.*<br/>
@@ -41,8 +44,10 @@ Case-studies em Visão Computacional com Torch7.
 `2011-2012`
 **Analista de Redes e Segurança (Aprendiz),**
 *Algar Tecnologia.*<br/>
-Gerenciamento e configuração remota de ativos de rede (Firewalls, Switches e Roteadores).
-Atendimento às ocorrências necessárias para manutenção de rede local junto ao SAT (Setor de Assistência Técnica).
+na Algar eu trabalhei no: <br/>
+Gerenciamento e configuração remota de ativos de rede (Firewalls, Switches e Roteadores).<br/>
+Atendimento às ocorrências de 'manutenção de rede local' junto ao SAT (Setor
+de Assistência Técnica).
 
 
 ## Atividades Acadêmicas
