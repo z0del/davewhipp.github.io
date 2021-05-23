@@ -1,4 +1,4 @@
-<script type="text/javascript" async>
+<script type="text/javascript" async="async">
   // based on http://stackoverflow.com/a/10300743/280842
   function gen_mail_to_link(hs, subject) {
     var lhs,rhs;
@@ -14,7 +14,7 @@
   <ul>
     {% if author.email %}
       <li>
-      <script async>gen_mail_to_link('{{ author.email }}', 'Hello from website');</script>
+      <script async="async">gen_mail_to_link('{{ author.email }}', 'Hello from website');</script>
       </li>
     {% endif %}
     {% if author.twitter %}<li><a href="http://twitter.com/{{ author.twitter }}" class="social-link-item" target="_blank"><i class="fa fa-fw fa-twitter"></i></a></li>{% endif %}
