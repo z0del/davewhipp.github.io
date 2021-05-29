@@ -7,7 +7,7 @@ permalink: cv/cv-pt_br
 Cientista de Dados, Callink Serviços <br/>
 
 <div id="webaddress">
-  <i class="fa fa-fw fa-phone"></i>+55 (34) 9 9841 4017 <br/>
+  <i class="fa fa-fw fa-phone"></i> +55 (34) 9 9841 4017 <br/>
   <a href="mailto:g.lks@pm.me"> <i class="fa fa-fw fa-envelope"></i> g.lks@pm.me</a> <br/>
   <a href="https://github.com/z0del"><i class="fa fa-fw fa-github"></i> z0del</a> <br/>
   <a href="https://www.hackerrank.com/z0del"><i class="fa fa-fw fa-users"></i> www.hackerrank.com/z0del</a>
@@ -65,7 +65,7 @@ Modelagem de Financial Contagion e VaR(Value-at-Risk) usando Cópulas estatísti
 *FACOM-UFU, Universidade Federal de Uberlândia*
 
 `2014-2017`
-**Pesquisa operacional em inteligência artificial clássica,**<br/>
+**Pesquisa operacional; Inteligência artificial clássica,**<br/>
 **Algoritimos e estrutura de dados em programação funcional,**
 *EngeComp-UFU, Universidade Federal de Uberlândia*
 
