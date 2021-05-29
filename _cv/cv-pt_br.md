@@ -8,7 +8,7 @@ Cientista de Dados, Callink Serviços <br/>
 
 <div id="webaddress">
   <i class="fa fa-fw fa-phone"></i>+55 (34) 9 9841 4017 <br/>
-  <a href="g.lks@pm.me"> <i class="fa fa-fw fa-envelope"></i> g.lks@pm.me</a> <br/>
+  <a href="mailto:g.lks@pm.me"> <i class="fa fa-fw fa-envelope"></i> g.lks@pm.me</a> <br/>
   <a href="https://github.com/z0del"><i class="fa fa-fw fa-github"></i> z0del</a> <br/>
   <a href="https://www.hackerrank.com/z0del"><i class="fa fa-fw fa-users"></i> www.hackerrank.com/z0del</a>
 </div> <br/>
