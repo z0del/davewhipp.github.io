@@ -26,7 +26,7 @@ Cientista de Dados, GAVB/Grupo Boticario <br/>
 ## Experiência
 
 `2021-atualmente`
-**Data Scientist,**
+**Cientista de Dados,**
 *GAVB/Grupo Boticario.*<br/>
 
 `2019-2021`
