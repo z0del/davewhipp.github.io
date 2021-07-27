@@ -4,7 +4,7 @@ permalink: cv/cv-en_us
 ---
 
 # George Lukas
-Data Scientist, Callink Serviços <br/>
+Data Scientist, GAVB/Grupo Boticario <br/>
 
 <div id="webaddress">
   <i class="fa fa-fw fa-phone"></i> +55 (34) 9 9841 4017 <br/>
@@ -25,10 +25,14 @@ Data Scientist, Callink Serviços <br/>
 
 ## Experience
 
-`2019-present`
+`2021-present`
+**Data Scientist,**
+*GAVB/Grupo Boticario.*<br/>
+
+`2019-2021`
 **Data Scientist,**
 *Callink Serviços.*<br/>
-at Callink, I work with:<br/>
+at Callink, I worked with:<br/>
 Regression Analysis/Propensity modelling and combinatorial optimization tasks to improve performance indicators;<br/>
 Development of remote process management tools;<br/>
 Development and  processes management (ETL);<br/>
@@ -101,4 +105,4 @@ Native: Portuguese<br/>
 Advanced: English<br/>
 Basic: German<br/>
 
-<br/>Last updated: March  2021<br/><br/>
+<br/>Last updated: July 2021<br/><br/>

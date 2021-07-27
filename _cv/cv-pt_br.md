@@ -4,7 +4,7 @@ permalink: cv/cv-pt_br
 ---
 
 # George Lukas
-Cientista de Dados, Callink Serviços <br/>
+Cientista de Dados, GAVB/Grupo Boticario <br/>
 
 <div id="webaddress">
   <i class="fa fa-fw fa-phone"></i> +55 (34) 9 9841 4017 <br/>
@@ -25,7 +25,11 @@ Cientista de Dados, Callink Serviços <br/>
 
 ## Experiência
 
-`2019-atualmente`
+`2021-atualmente`
+**Data Scientist,**
+*GAVB/Grupo Boticario.*<br/>
+
+`2019-2021`
 **Cientista de Dados,**
 *Callink Serviços.*<br/>
 Análise de regressão/modelagem de propensão e tarefas de otimização combinatória para melhoraria de indicadores de desempenho;<br/>
@@ -103,4 +107,4 @@ Avançado: Inglês<br/>
 Básico: Alemão<br/>
 Nativo: Português<br/>
 
-<br/>Last updated: March  2021<br/><br/>
+<br/>Last updated: July 2021<br/><br/>
