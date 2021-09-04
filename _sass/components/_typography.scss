@@ -46,8 +46,20 @@ a {
 // Header Styles
 //
 
-h1, h2, h3, h4, h5, h6 {
-	font-weight: 600;
+h1{
+  color: #ff6363;
+  font-weight: 600;
+  line-height: 1.7;
+}
+
+h2{
+  color: #ff6363;
+  font-weight: 600;
+  line-height: 1.7;
+}
+
+h3, h4, h5, h6 {
+  font-weight: 600;
   line-height: 1.7;
 }
 

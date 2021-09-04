@@ -46,7 +46,7 @@ section.post {
 
 // Post title
 .post-title {
-
+    color: $primary;
 }
 
 .post-title-link {
@@ -177,31 +177,45 @@ a.read-more {
   }
 }
 .twitter {
-  background-color: #77bcf1;
+  background-color: #26a7de;
   color: $white;
-  border-color: #77bcf1;
+  border-color: #26a7de;
   &:visited {
     color: $white;
-    border-color: #77bcf1;
+    border-color: #26a7de;
   }
   &:hover {
     background-color: $white;
-    color: #77bcf1;
-    border-color: #77bcf1;
+    color: #26a7de;
+    border-color: #26a7de;
   }
 }
 .facebook {
-  background-color: #627aac;
+  background-color: #3b5998;
   color: $white;
-  border-color: #627aac;
+  border-color: #3b5998;
   &:visited {
     color: $white;
-    border-color: #627aac;
+    border-color: #3b5998;
   }
   &:hover {
     background-color: $white;
-    color: #627aac;
-    border-color: #627aac;
+    color: #3b5998;
+    border-color: #3b5998;
+  }
+}
+.linkedin {
+  background-color: #0077b5;
+  color: $white;
+  border-color: #0077b5;
+  &:visited {
+    color: $white;
+    border-color: #0077b5;
+  }
+  &:hover {
+    background-color: $white;
+    color: #0077b5;
+    border-color: #0077b5;
   }
 }
 .google-plus {
@@ -233,16 +247,16 @@ a.read-more {
   }
 }
 .reddit {
-  background-color: #5f99cf;
+  background-color: #FF5700;
   color: $white;
-  border-color: #5f99cf;
+  border-color: #FF5700;
   &:visited {
     color: $white;
-    border-color: #5f99cf;
+    border-color: #FF5700;
   }
   &:hover {
     background-color: $white;
-    color: #5f99cf;
-    border-color: #5f99cf;
+    color: #FF5700;
+    border-color: #FF5700;
   }
 }
