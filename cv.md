@@ -1,6 +1,6 @@
 ---
-layout: cv
-title:  CV
+layout: page
+title:  myCV
 permalink: /cv/
 ---
 There are two versions of my CV available on this site:
