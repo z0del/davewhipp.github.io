@@ -15,23 +15,20 @@ Cientista de Dados, GAVB/Grupo Boticario <br/>
 
 ## Educação
 
-`2020-atualmente`
 **Lic. Matemática**, 
-*Universidade Presbiteriana Mackenzie*, Uberlândia, MG, BR.<br/>
+*Universidade Presbiteriana Mackenzie, <br/> 2020-atualmente, Uberlândia, MG, BR.<br/>*
 
-`2013-2017`
+
 **BSc. Ciência da Computação (Interrompido)**,
-*Universidade Federal de Uberlândia*, Ubertândia, MG, BR.
+*Universidade Federal de Uberlândia, <br/> 2013-2017, Ubertândia, MG, BR.*
 
 ## Experiência
 
-`2021-atualmente`
-**Cientista de Dados,**
-*GAVB/Grupo Boticario.*<br/>
 
-`2019-2021`
-**Cientista de Dados,**
-*Callink Serviços.*<br/>
+**Cientista de Dados** <br/>*GAVB/Grupo Boticario, 2021-atualmente*<br/>
+
+**Cientista de Dados** <br/>
+*Callink Serviços, 2019-2021:* <br/>
 Análise de regressão/modelagem de propensão e tarefas de otimização combinatória para melhoraria de indicadores de desempenho;<br/>
 Desenvolvimento de ferramentas para gerenciamento remoto de tarefas;<br/>
 Desenvolvimento e gerenciamento de processos (ETL);<br/>
@@ -40,14 +37,11 @@ Administração de bancos de dados.<br/>
 Tecnologias: Python, sklearn, pyStats, pyTelegram-API, MSSQL, MySQL, jupyter, Rapidminer
 
 
-`2015-2016`
-**Pesquisador (Bolsa FINEP),** *Universidade Federal de Uberlândia.*<br/>
+**Pesquisador (Bolsa FINEP)**  <br/>*Universidade Federal de Uberlândia, 2015-2016:*<br/>
 Case-studies em Visão Computacional com Torch7.
 
-`2011-2012`
-**Analista de Redes e Segurança (Aprendiz),**
-*Algar Tecnologia.*<br/>
-na Algar eu trabalhei no: <br/>
+**Analista de Redes e Segurança (Aprendiz)** <br/>
+*Algar Tecnologia, 2011-2012:*<br/>
 Gerenciamento e configuração remota de ativos de rede (Firewalls, Switches e Roteadores).<br/>
 Atendimento às ocorrências de 'manutenção de rede local' junto ao SAT (Setor
 de Assistência Técnica).
@@ -57,48 +51,46 @@ de Assistência Técnica).
 
 ### Iniciação Científica
 
-`2019`
-**Financial Risk Modelling and Portfolio Theory,**
-*IERI-UFU, Universidade Federal de Uberlândia*<br/>
+**Financial Risk Modelling and Portfolio Theory**<br/>
+*IERI-UFU, Universidade Federal de Uberlândia, 2019:*<br/>
 Modelagem de Financial Contagion e VaR(Value-at-Risk) usando Cópulas estatísticas.
 
 ### Auxiliar de Laboratório
 
-`2017`
-**Molecular Dynamics Simulation,**
-*FACOM-UFU, Universidade Federal de Uberlândia*
+**Molecular Dynamics Simulation**<br/>
+*FACOM-UFU, Universidade Federal de Uberlândia, 2017*
 
-`2014-2017`
-**Pesquisa operacional; Inteligência artificial clássica,**<br/>
-**Algoritimos e estrutura de dados em programação funcional,**
-*EngeComp-UFU, Universidade Federal de Uberlândia*
+**Pesquisa operacional; Fundamentos da Inteligência artificial**<br/>
+**Algoritimos e estrutura de dados em programação funcional**<br/>
+*EngeComp-UFU, Universidade Federal de Uberlândia, 2014-2017*
 
 ### Monitor de classe
 
-`2015`
-**Programação Funcional,**
-*FACOM-UFU, Universidade Federal de Uberlândia*
+**GBC033 - Programação Funcional** <br/>
+*FACOM-UFU, Universidade Federal de Uberlândia. 2015*
 
 ## Treinamento Professional
 
-`2021`
-**Computational Geometry,**<br/>
-*Saint Petersburg State University (Coursera).*
+**Deep Learning Foundations (IBM)**<br/>
+*CognitiveClass.ai, 2021*<br/>
+
+**TensorFlow Essentials (IBM)**<br/>
+*CognitiveClass.ai, 2021*<br/>
+
+**Computational Geometry**<br/>
+*Saint Petersburg State University (Coursera), 2021:*
 <br/>An introduction to computational geometry – 
 With special attention on representation of geometric primitives and evaluation of geometric predicates.<br/>
 
-`2021`
-**Introduction to Mathematical Thinking,**<br/>
-*Stanford (Coursera).*<br/>
+**Introduction to Mathematical Thinking**<br/>
+*Stanford (Coursera), 2021:*<br/>
 A short course on Number Theory, Real Analysis and Mathematical Logic.<br/>
 
-`2020`
-**Python for Data Science (IBM),**
-*CognitiveClass.ai*<br/>
+**Python for Data Science (IBM)**<br/>
+*CognitiveClass.ai, 2020*<br/>
 
-`2020`
-**Hadoop Foundations (IBM),**
-*CognitiveClass.ai*<br/>
+**Hadoop Foundations (IBM)**<br/>
+*CognitiveClass.ai, 2020*<br/>
 
 
 ## Idiomas
@@ -107,4 +99,4 @@ Avançado: Inglês<br/>
 Básico: Alemão<br/>
 Nativo: Português<br/>
 
-<br/>Last updated: July 2021<br/><br/>
+<br/>Last updated: November 2021<br/><br/>

@@ -15,40 +15,34 @@ Data Scientist, GAVB/Grupo Boticario <br/>
 
 ## Education
 
-`2020-present`
 **Lic. Mathematics**, 
-*Mackenzie Presbyterian University*, Uberlândia, MG, BR.<br/>
+*Mackenzie Presbyterian University, <br/> 2020-present, Uberlândia, MG, BR.<br/>*
 
-`2013-2017`
+
 **BSc. Computer Science (incomplete degree)**,
-*Federal University of Uberlandia*, Ubertândia, MG, BR.
+*Federal University of Uberlandia, <br/> 2013-2017, Ubertândia, MG, BR.*
 
 ## Experience
 
-`2021-present`
-**Data Scientist,**
-*GAVB/Grupo Boticario.*<br/>
 
-`2019-2021`
-**Data Scientist,**
-*Callink Serviços.*<br/>
-at Callink, I worked with:<br/>
+**Data Scientist** <br/>*GAVB/Grupo Boticario, 2021-present*<br/>
+
+**Data Scientist** <br/>
+*Callink Serviços, 2019-2021:* <br/>
 Regression Analysis/Propensity modelling and combinatorial optimization tasks to improve performance indicators;<br/>
 Development of remote process management tools;<br/>
 Development and  processes management (ETL);<br/>
 Database management.<br/>
 
-Technologies: Python, sklearn, pyStats, PyTelegram-API, MSSQL, MySQL, jupyter, Rapidminer
+Technologies: Python, sklearn, pyStats, pyTelegram-API, MSSQL, MySQL, jupyter, Rapidminer
 
-`2015-2016`
-**Scolarship (FINEP),** *Federal University of Uberlandia.*<br/>
- Topics in Data Analysis and Computer Vision with Torch7.
 
-`2011-2012`
-**Network and Security Analyst (Apprenticeship),**
-*Algar Tecnologia.*<br/>
-at Algar, I worked with:<br/>
-Remote configuration and management of network assets (Firewalls, Switches and Routers);<br/>
+**Scolarship (FINEP)**  <br/>*Federal University of Uberlandia, 2015-2016:*<br/>
+Topics in Data Analysis and Computer Vision with Torch7.
+
+**Network and Security Analyst (Apprenticeship)** <br/>
+*Algar Tecnologia, 2011-2012:*<br/>
+Remote management and configuration of network assets (Firewalls, Switches and Routers);<br/>
 Attendance to the occurrences of 'local network maintenance' with the SAT (Technical Assistance Sector).
 
 
@@ -56,47 +50,46 @@ Attendance to the occurrences of 'local network maintenance' with the SAT (Techn
 
 ### Undergraduate Student Researcher
 
-`2019`
-**Financial Risk Modelling and Portfolio Theory,**
-*IERI-UFU, Federal University of Uberlandia*<br/>
-Modelling Financial Contagion and VaR(Value-at-Risk) using Statistical Copulae.
+**Financial Risk Modelling and Portfolio Theory**<br/>
+*IERI-UFU, Federal University of Uberlandia, 2019:*<br/>
+Financial Contagion and VaR(Value-at-Risk) Modelling using Statistical Copulae.
 
 ### Lab. Assistant
 
-`2017`
-**Molecular Dynamics Simulation,**
-*FACOM-UFU, Federal University of Uberlandia*
+**Molecular Dynamics Simulation**<br/>
+*FACOM-UFU, Federal University of Uberlandia, 2017*
 
-`2014-2017`
-**Artificial Intelligence Research; Case studies in Algorithms and Data Structures using Haskell,** <br/>
-*EngeComp-UFU, Federal University of Uberlandia*
+**Case studies on the Foundations of Artificial Intelligence;**<br/>
+**Case studies in Algorithms and Data Structures using Haskell**<br/>
+*EngeComp-UFU, Federal University of Uberlandia, 2014-2017*
 
 ### Teacher Assistant
 
-`2015`
-**Functional Programming,**
-*FACOM-UFU, Federal University of Uberlandia*
+**GBC033 - Functional Programming** <br/>
+*FACOM-UFU, Federal University of Uberlandia. 2015*
 
 ## Professional training
 
-`2021`
-**Computational Geometry,**<br/>
-*Saint Petersburg State University (Coursera).*
+**Deep Learning Foundations (IBM)**<br/>
+*CognitiveClass.ai, 2021*<br/>
+
+**TensorFlow Essentials (IBM)**<br/>
+*CognitiveClass.ai, 2021*<br/>
+
+**Computational Geometry**<br/>
+*Saint Petersburg State University (Coursera), 2021:*
 <br/>An introduction to computational geometry – 
 With special attention on representation of geometric primitives and evaluation of geometric predicates.<br/>
 
-`2021`
-**Introduction to Mathematical Thinking,**<br/>
-*Stanford (Coursera).*<br/>
+**Introduction to Mathematical Thinking**<br/>
+*Stanford (Coursera), 2021:*<br/>
 A short course on Number Theory, Real Analysis and Mathematical Logic.<br/>
 
-`2020`
-**Python for Data Science (IBM),**
-*CognitiveClass.ai*<br/>
+**Python for Data Science (IBM)**<br/>
+*CognitiveClass.ai, 2020*<br/>
 
-`2020`
-**Hadoop Foundations (IBM),**
-*CognitiveClass.ai*<br/>
+**Hadoop Foundations (IBM)**<br/>
+*CognitiveClass.ai, 2020*<br/>
 
 
 ## Languages
@@ -105,4 +98,4 @@ Native: Portuguese<br/>
 Advanced: English<br/>
 Basic: German<br/>
 
-<br/>Last updated: July 2021<br/><br/>
+<br/>Last updated: November 2021<br/><br/>
