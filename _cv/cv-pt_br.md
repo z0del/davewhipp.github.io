@@ -42,7 +42,7 @@ Case-studies em Visão Computacional com Torch7.
 
 **Analista de Redes e Segurança (Aprendiz)** <br/>
 *Algar Tecnologia, 2011-2012:*<br/>
-Gerenciamento e configuração remota de ativos de rede (Firewalls, Switches e Roteadores).<br/>
+Gerenciamento e configuração remota de ativos de rede (Firewalls, Switches e Roteadores);<br/>
 Atendimento às ocorrências de 'manutenção de rede local' junto ao SAT (Setor
 de Assistência Técnica).
 
