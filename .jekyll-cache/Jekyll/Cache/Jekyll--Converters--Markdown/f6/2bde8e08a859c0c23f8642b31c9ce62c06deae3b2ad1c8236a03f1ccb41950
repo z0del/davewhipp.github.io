@@ -1,0 +1,982 @@
+I"ؑ<h1 id="deduplication--record-linkage">Deduplication &amp; Record Linkage.</h1>
+
+<h1 id="this-notebook-shows-how-to-use-td-idf-fuzzy-to-both-dedupe-and-match-records-at-scale-besides-k-nearest-neighbour-algorithm-as-an-alternative-closeness-measure">This notebook shows how to use TD IDF, FUZZY to both dedupe and match records at scale besides K Nearest Neighbour algorithm as an alternative closeness measure</h1>
+
+<p>Data in the real world is messy. Dealing with messy data sets is painful and burns through time which could be spent analysing the data itself.</p>
+
+<p><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTc_jlg2hrSRYqdenJdv7p_4Xo6Uj-qqCPpx4ANHI2hNkA8TJQPJQ&amp;s" alt="https://www.acronis.com/en-us/articles/deduplication/" /></p>
+
+<ul>
+  <li>
+    <p><strong>Deduplication</strong>. Aligning similar categories or entities in a data set (for example, we may need to combine ‘D J Trump’, ‘D. Trump’ and ‘Donald Trump’ into the same entity).</p>
+  </li>
+  <li>
+    <p><strong>Record Linkage</strong>. Joining data sets on a particular entity (for example, joining records of ‘D J Trump’ to a URL of his Wikipedia page)</p>
+  </li>
+</ul>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="kn">import</span> <span class="nn">warnings</span>
+<span class="n">warnings</span><span class="p">.</span><span class="n">filterwarnings</span><span class="p">(</span><span class="s">"ignore"</span><span class="p">,</span> <span class="n">category</span><span class="o">=</span><span class="nb">DeprecationWarning</span><span class="p">)</span>
+<span class="n">warnings</span><span class="p">.</span><span class="n">filterwarnings</span><span class="p">(</span><span class="s">"ignore"</span><span class="p">,</span> <span class="n">category</span><span class="o">=</span><span class="nb">UserWarning</span><span class="p">)</span>
+<span class="n">warnings</span><span class="p">.</span><span class="n">filterwarnings</span><span class="p">(</span><span class="s">"ignore"</span><span class="p">,</span> <span class="n">category</span><span class="o">=</span><span class="nb">FutureWarning</span><span class="p">)</span>
+</code></pre></div></div>
+
+<h4 id="important-talk-by-presented-at-pybay2018">Important Talk by: presented at PyBay2018</h4>
+
+<iframe width="720" height="720" src="https://www.youtube.com/embed/McsTWXeURhA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
+
+<p><strong>Record Deduplication</strong>, or more generally, Record Linkage is the task of finding which records refer to the same entity, like a person or a company. It’s used mainly when there isn’t a unique identifier in records like Social Security Number for US citizens</p>
+
+<p><a href="https://dedupe.io">Dedupe.io</a></p>
+
+<h1 id="import-libs">Import libs</h1>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="n">np</span> <span class="c1"># linear algebra
+</span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="n">pd</span> <span class="c1"># data processing, CSV file I/O (e.g. pd.read_csv)
+</span><span class="kn">import</span> <span class="nn">time</span>
+<span class="n">pd</span><span class="p">.</span><span class="n">set_option</span><span class="p">(</span><span class="s">'display.max_colwidth'</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+</code></pre></div></div>
+
+<h2 id="read-in-data">Read in Data</h2>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">os</span>
+<span class="k">print</span><span class="p">(</span><span class="n">os</span><span class="p">.</span><span class="n">listdir</span><span class="p">(</span><span class="s">"../input/sec-edgar-companies-list/"</span><span class="p">))</span>
+<span class="p">[</span><span class="s">'sec__edgar_company_info.csv'</span><span class="p">,</span> <span class="s">'database.sqlite'</span><span class="p">]</span>
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">root</span> <span class="o">=</span> <span class="s">'../input/sec-edgar-companies-list/'</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="p">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">root</span> <span class="o">+</span> <span class="s">'sec__edgar_company_info.csv'</span><span class="p">,</span><span class="n">encoding</span><span class="o">=</span><span class="s">'latin'</span><span class="p">)</span>
+</code></pre></div></div>
+
+<h2 id="glimpse-of-data">Glimpse of Data</h2>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">print</span><span class="p">(</span><span class="s">'Size of data '</span><span class="p">,</span><span class="n">data</span><span class="p">.</span><span class="n">shape</span><span class="p">)</span>
+<span class="n">Size</span> <span class="n">of</span> <span class="n">data</span>  <span class="p">(</span><span class="mi">663000</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">data</span><span class="p">.</span><span class="n">head</span><span class="p">()</span>
+</code></pre></div></div>
+
+<div>
+
+<style scoped="">
+
+    .dataframe tbody tr th:only-of-type {
+
+        vertical-align: middle;
+
+    }
+
+    .dataframe tbody tr th {
+
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+
+        text-align: right;
+
+    }
+
+</style>
+
+<table border="1" class="dataframe">
+
+  <thead>
+
+    <tr style="text-align: right;">
+
+      <th></th>
+
+      <th>Line Number</th>
+
+      <th>Company Name</th>
+
+      <th>Company CIK Key</th>
+
+    </tr>
+
+  </thead>
+
+  <tbody>
+
+    <tr>
+
+      <th>0</th>
+
+      <td>1</td>
+
+      <td>!J INC</td>
+
+      <td>1438823</td>
+
+    </tr>
+
+    <tr>
+
+      <th>1</th>
+
+      <td>2</td>
+
+      <td>#1 A LIFESAFER HOLDINGS, INC.</td>
+
+      <td>1509607</td>
+
+    </tr>
+
+    <tr>
+
+      <th>2</th>
+
+      <td>3</td>
+
+      <td>#1 ARIZONA DISCOUNT PROPERTIES LLC</td>
+
+      <td>1457512</td>
+
+    </tr>
+
+    <tr>
+
+      <th>3</th>
+
+      <td>4</td>
+
+      <td>#1 PAINTBALL CORP</td>
+
+      <td>1433777</td>
+
+    </tr>
+
+    <tr>
+
+      <th>4</th>
+
+      <td>5</td>
+
+      <td>$ LLC</td>
+
+      <td>1427189</td>
+
+    </tr>
+
+  </tbody>
+
+</table>
+
+</div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">data</span><span class="p">.</span><span class="n">select_dtypes</span><span class="p">(</span><span class="s">'object'</span><span class="p">).</span><span class="nb">apply</span><span class="p">(</span><span class="n">pd</span><span class="p">.</span><span class="n">Series</span><span class="p">.</span><span class="n">nunique</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+
+
+
+    <span class="n">Company</span> <span class="n">Name</span>    <span class="mi">657160</span>
+
+    <span class="n">dtype</span><span class="p">:</span> <span class="n">int64</span>
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="n">data</span><span class="p">.</span><span class="n">tail</span><span class="p">()</span>
+
+</code></pre></div></div>
+
+<div>
+
+<style scoped="">
+
+    .dataframe tbody tr th:only-of-type {
+
+        vertical-align: middle;
+
+    }
+
+
+
+    .dataframe tbody tr th {
+
+        vertical-align: top;
+
+    }
+
+
+
+    .dataframe thead th {
+
+        text-align: right;
+
+    }
+
+</style>
+
+<table border="1" class="dataframe">
+
+  <thead>
+
+    <tr style="text-align: right;">
+
+      <th></th>
+
+      <th>Line Number</th>
+
+      <th>Company Name</th>
+
+      <th>Company CIK Key</th>
+
+    </tr>
+
+  </thead>
+
+  <tbody>
+
+    <tr>
+
+      <th>662995</th>
+
+      <td>662996</td>
+
+      <td>ZZ GLOBAL LLC</td>
+
+      <td>1501460</td>
+
+    </tr>
+
+    <tr>
+
+      <th>662996</th>
+
+      <td>662997</td>
+
+      <td>ZZIF 2008 INVESTMENT LLC</td>
+
+      <td>1448632</td>
+
+    </tr>
+
+    <tr>
+
+      <th>662997</th>
+
+      <td>662998</td>
+
+      <td>ZZLL INFORMATION TECHNOLOGY, INC</td>
+
+      <td>1365357</td>
+
+    </tr>
+
+    <tr>
+
+      <th>662998</th>
+
+      <td>662999</td>
+
+      <td>ZZX, LLC</td>
+
+      <td>1691924</td>
+
+    </tr>
+
+    <tr>
+
+      <th>662999</th>
+
+      <td>663000</td>
+
+      <td>ZZYZX ZZAZX ZZOZX INC</td>
+
+      <td>1184274</td>
+
+    </tr>
+
+  </tbody>
+
+</table>
+
+</div>
+
+<p><strong>ratio</strong> , compares the entire string similarity, in order.</p>
+
+<h2 id="tf-idf--n-grams">TF-IDF &amp; N-Grams</h2>
+
+<p><strong>TF-IDF</strong> is a method to generate features from text by multiplying the frequency of a term (usually a word) in a document (the Term Frequency, or TF) by the importance (the Inverse Document Frequency or IDF) of the same term in an entire corpus. This last term weights less important words (e.g. the, it, and etc) down, and words that don’t occur frequently up. IDF is calculated as:</p>
+
+<p>IDF(t) = log_e(Total number of documents / Number of documents with term t in it)</p>
+
+<h3 id="n-grams---de-duplication">N-Grams  &amp; De-Duplication</h3>
+
+<p>While the terms in <strong>TF-IDF</strong> are usually words, this is not a necessity. In our case using words as terms wouldn’t help us much, as most company names only contain one or two words. This is why we will use n-grams: sequences of N contiguous items, in this case characters. The following function cleans a string and generates all n-grams in this string:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="err">!</span><span class="n">pip</span> <span class="n">install</span> <span class="n">ftfy</span> <span class="c1"># amazing text cleaning for decode issues..
+</span>
+<span class="n">Requirement</span> <span class="n">already</span> <span class="n">satisfied</span><span class="p">:</span> <span class="n">ftfy</span> <span class="ow">in</span> <span class="o">/</span><span class="n">opt</span><span class="o">/</span><span class="n">conda</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">python3</span><span class="p">.</span><span class="mi">6</span><span class="o">/</span><span class="n">site</span><span class="o">-</span><span class="n">packages</span> <span class="p">(</span><span class="mf">5.6</span><span class="p">)</span>
+<span class="n">Requirement</span> <span class="n">already</span> <span class="n">satisfied</span><span class="p">:</span> <span class="n">wcwidth</span> <span class="ow">in</span> <span class="o">/</span><span class="n">opt</span><span class="o">/</span><span class="n">conda</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">python3</span><span class="p">.</span><span class="mi">6</span><span class="o">/</span><span class="n">site</span><span class="o">-</span><span class="n">packages</span> <span class="p">(</span><span class="k">from</span> <span class="n">ftfy</span><span class="p">)</span> <span class="p">(</span><span class="mf">0.1</span><span class="p">.</span><span class="mi">7</span><span class="p">)</span>
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">re</span>
+<span class="kn">from</span> <span class="nn">ftfy</span> <span class="kn">import</span> <span class="n">fix_text</span>
+
+<span class="k">def</span> <span class="nf">ngrams</span><span class="p">(</span><span class="n">string</span><span class="p">,</span> <span class="n">n</span><span class="o">=</span><span class="mi">3</span><span class="p">):</span>
+
+    <span class="n">string</span> <span class="o">=</span> <span class="n">fix_text</span><span class="p">(</span><span class="n">string</span><span class="p">)</span> <span class="c1"># fix text
+</span>    <span class="n">string</span> <span class="o">=</span> <span class="n">string</span><span class="p">.</span><span class="n">encode</span><span class="p">(</span><span class="s">"ascii"</span><span class="p">,</span> <span class="n">errors</span><span class="o">=</span><span class="s">"ignore"</span><span class="p">).</span><span class="n">decode</span><span class="p">()</span> <span class="c1">#remove non ascii chars
+</span>    <span class="n">string</span> <span class="o">=</span> <span class="n">string</span><span class="p">.</span><span class="n">lower</span><span class="p">()</span>
+    <span class="n">chars_to_remove</span> <span class="o">=</span> <span class="p">[</span><span class="s">")"</span><span class="p">,</span><span class="s">"("</span><span class="p">,</span><span class="s">"."</span><span class="p">,</span><span class="s">"|"</span><span class="p">,</span><span class="s">"["</span><span class="p">,</span><span class="s">"]"</span><span class="p">,</span><span class="s">"{"</span><span class="p">,</span><span class="s">"}"</span><span class="p">,</span><span class="s">"'"</span><span class="p">]</span>
+    <span class="n">rx</span> <span class="o">=</span> <span class="s">'['</span> <span class="o">+</span> <span class="n">re</span><span class="p">.</span><span class="n">escape</span><span class="p">(</span><span class="s">''</span><span class="p">.</span><span class="n">join</span><span class="p">(</span><span class="n">chars_to_remove</span><span class="p">))</span> <span class="o">+</span> <span class="s">']'</span>
+    <span class="n">string</span> <span class="o">=</span> <span class="n">re</span><span class="p">.</span><span class="n">sub</span><span class="p">(</span><span class="n">rx</span><span class="p">,</span> <span class="s">''</span><span class="p">,</span> <span class="n">string</span><span class="p">)</span>
+    <span class="n">string</span> <span class="o">=</span> <span class="n">string</span><span class="p">.</span><span class="n">replace</span><span class="p">(</span><span class="s">'&amp;'</span><span class="p">,</span> <span class="s">'and'</span><span class="p">)</span>
+    <span class="n">string</span> <span class="o">=</span> <span class="n">string</span><span class="p">.</span><span class="n">replace</span><span class="p">(</span><span class="s">','</span><span class="p">,</span> <span class="s">' '</span><span class="p">)</span>
+    <span class="n">string</span> <span class="o">=</span> <span class="n">string</span><span class="p">.</span><span class="n">replace</span><span class="p">(</span><span class="s">'-'</span><span class="p">,</span> <span class="s">' '</span><span class="p">)</span>
+    <span class="n">string</span> <span class="o">=</span> <span class="n">string</span><span class="p">.</span><span class="n">title</span><span class="p">()</span> <span class="c1"># normalise case - capital at start of each word
+</span>    <span class="n">string</span> <span class="o">=</span> <span class="n">re</span><span class="p">.</span><span class="n">sub</span><span class="p">(</span><span class="s">' +'</span><span class="p">,</span><span class="s">' '</span><span class="p">,</span><span class="n">string</span><span class="p">).</span><span class="n">strip</span><span class="p">()</span> <span class="c1"># get rid of multiple spaces and replace with a single
+</span>    <span class="n">string</span> <span class="o">=</span> <span class="s">' '</span><span class="o">+</span> <span class="n">string</span> <span class="o">+</span><span class="s">' '</span> <span class="c1"># pad names for ngrams...
+</span>    <span class="n">string</span> <span class="o">=</span> <span class="n">re</span><span class="p">.</span><span class="n">sub</span><span class="p">(</span><span class="sa">r</span><span class="s">'[,-./]|\sBD'</span><span class="p">,</span><span class="sa">r</span><span class="s">''</span><span class="p">,</span> <span class="n">string</span><span class="p">)</span>
+    <span class="n">ngrams</span> <span class="o">=</span> <span class="nb">zip</span><span class="p">(</span><span class="o">*</span><span class="p">[</span><span class="n">string</span><span class="p">[</span><span class="n">i</span><span class="p">:]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">)])</span>
+
+    <span class="k">return</span> <span class="p">[</span><span class="s">''</span><span class="p">.</span><span class="n">join</span><span class="p">(</span><span class="n">ngram</span><span class="p">)</span> <span class="k">for</span> <span class="n">ngram</span> <span class="ow">in</span> <span class="n">ngrams</span><span class="p">]</span>
+</code></pre></div></div>
+
+<blockquote>
+  <p>The code to generate the matrix of TF-IDF values for each is shown below.</p>
+</blockquote>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">sklearn.feature_extraction.text</span> <span class="kn">import</span> <span class="n">TfidfVectorizer</span>
+
+<span class="n">company_names</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s">'Company Name'</span><span class="p">].</span><span class="n">unique</span><span class="p">()</span>
+<span class="n">vectorizer</span> <span class="o">=</span> <span class="n">TfidfVectorizer</span><span class="p">(</span><span class="n">min_df</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">analyzer</span><span class="o">=</span><span class="n">ngrams</span><span class="p">)</span>
+<span class="n">tf_idf_matrix</span> <span class="o">=</span> <span class="n">vectorizer</span><span class="p">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">company_names</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>The resulting matrix is very sparse as most terms in the corpus will not appear in most company names. Scikit-learn deals with this nicely by returning a sparse CSR matrix.</p>
+
+<p>You can see the first row (<strong>“!J INC”</strong>) contains three terms for the columns 11, 16196, and 15541.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">data</span><span class="p">.</span><span class="n">head</span><span class="p">()</span>
+</code></pre></div></div>
+
+<div>
+
+<style scoped="">
+
+    .dataframe tbody tr th:only-of-type {
+
+        vertical-align: middle;
+
+    }
+
+
+
+    .dataframe tbody tr th {
+
+        vertical-align: top;
+
+    }
+
+
+
+    .dataframe thead th {
+
+        text-align: right;
+
+    }
+
+</style>
+
+<table border="1" class="dataframe">
+
+  <thead>
+
+    <tr style="text-align: right;">
+
+      <th></th>
+
+      <th>Line Number</th>
+
+      <th>Company Name</th>
+
+      <th>Company CIK Key</th>
+
+    </tr>
+
+  </thead>
+
+  <tbody>
+
+    <tr>
+
+      <th>0</th>
+
+      <td>1</td>
+
+      <td>!J INC</td>
+
+      <td>1438823</td>
+
+    </tr>
+
+    <tr>
+
+      <th>1</th>
+
+      <td>2</td>
+
+      <td>#1 A LIFESAFER HOLDINGS, INC.</td>
+
+      <td>1509607</td>
+
+    </tr>
+
+    <tr>
+
+      <th>2</th>
+
+      <td>3</td>
+
+      <td>#1 ARIZONA DISCOUNT PROPERTIES LLC</td>
+
+      <td>1457512</td>
+
+    </tr>
+
+    <tr>
+
+      <th>3</th>
+
+      <td>4</td>
+
+      <td>#1 PAINTBALL CORP</td>
+
+      <td>1433777</td>
+
+    </tr>
+
+    <tr>
+
+      <th>4</th>
+
+      <td>5</td>
+
+      <td>$ LLC</td>
+
+      <td>1427189</td>
+
+    </tr>
+
+  </tbody>
+
+</table>
+
+</div>
+
+<blockquote>
+  <p>The last term (<strong>‘ORP’</strong>) has a relatively low value, <strong>0.22892</strong>, which makes sense as this term will appear often in the corpus, thus receiving a lower IDF weight.</p>
+</blockquote>
+
+<h2 id="record-linkage-and-a-different-approach">Record linkage and a different approach</h2>
+
+<blockquote>
+  <p>In the below section we will see how this is achieved and also use the K Nearest Neighbour algorithm as an alternative closeness measure.</p>
+</blockquote>
+
+<p>The dataset we would like to join on is a set of ‘clean’ organization names created by the Office for National Statistics (ONS):</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">clean_org_names</span><span class="p">.</span><span class="n">head</span><span class="p">()</span>
+</code></pre></div></div>
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+
+        vertical-align: middle;
+
+    }
+
+
+
+    .dataframe tbody tr th {
+
+        vertical-align: top;
+
+    }
+
+
+
+    .dataframe thead th {
+
+        text-align: right;
+
+    }
+
+</style>
+
+<table border="1" class="dataframe">
+
+  <thead>
+
+    <tr style="text-align: right;">
+
+      <th></th>
+
+      <th>Institutions</th>
+
+      <th>Sector</th>
+
+      <th>ESA10 category</th>
+
+      <th>Classification applies from</th>
+
+      <th>Date classified on the PSCG</th>
+
+      <th>Notes</th>
+
+    </tr>
+
+  </thead>
+
+  <tbody>
+
+    <tr>
+
+      <th>0</th>
+
+      <td>124 Facilities Ltd - (s C4)</td>
+
+      <td>Former Public Corporation</td>
+
+      <td>S.11001</td>
+
+      <td>2002-12-01 00:00:00</td>
+
+      <td>2019-05-12</td>
+
+      <td>NaN</td>
+
+    </tr>
+
+    <tr>
+
+      <th>1</th>
+
+      <td>2010 Rotherham Ltd</td>
+
+      <td>Former Public Corporation</td>
+
+      <td>S.11001</td>
+
+      <td>2011-07-01 00:00:00</td>
+
+      <td>2019-07-13</td>
+
+      <td>NaN</td>
+
+    </tr>
+
+    <tr>
+
+      <th>2</th>
+
+      <td>4 Ventures Ltd</td>
+
+      <td>Public Non-Financial Corporation</td>
+
+      <td>S.11001</td>
+
+      <td>2000-11-01 00:00:00</td>
+
+      <td>2019-05-12</td>
+
+      <td>NaN</td>
+
+    </tr>
+
+    <tr>
+
+      <th>3</th>
+
+      <td>A1 Housing Bassetlaw Ltd</td>
+
+      <td>Public Non-Financial Corporation</td>
+
+      <td>S.11001</td>
+
+      <td>2008-07-22 00:00:00</td>
+
+      <td>NaT</td>
+
+      <td>NaN</td>
+
+    </tr>
+
+    <tr>
+
+      <th>4</th>
+
+      <td>Aberdeen City Council</td>
+
+      <td>Local Government</td>
+
+      <td>S.1313</td>
+
+      <td>NaN</td>
+
+      <td>NaT</td>
+
+      <td>NaN</td>
+
+    </tr>
+
+  </tbody>
+
+</table>
+
+</div>
+
+<p>As can be shown in the code below, the only difference in this approach is to transform the messy data set using the tdif matrix which has been learned on the clean data set.</p>
+
+<p>The <strong>‘getNearestN’</strong> then uses Scikit’s implementation of K Nearest Neighbours to find the closest matches in the dataset:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">##################
+</span><span class="kn">from</span> <span class="nn">sklearn.metrics.pairwise</span> <span class="kn">import</span> <span class="n">cosine_similarity</span>
+<span class="kn">from</span> <span class="nn">sklearn.feature_extraction.text</span> <span class="kn">import</span> <span class="n">TfidfVectorizer</span>
+
+<span class="n">root2</span> <span class="o">=</span> <span class="s">'../input/gov-names/'</span>
+<span class="n">clean_org_names</span> <span class="o">=</span> <span class="n">pd</span><span class="p">.</span><span class="n">read_excel</span><span class="p">(</span><span class="n">root2</span> <span class="o">+</span> <span class="s">'Gov Orgs ONS.xlsx'</span><span class="p">)</span>
+<span class="n">clean_org_names</span> <span class="o">=</span> <span class="n">clean_org_names</span><span class="p">.</span><span class="n">iloc</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">:</span><span class="mi">6</span><span class="p">]</span>
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">org_name_clean</span> <span class="o">=</span> <span class="n">clean_org_names</span><span class="p">[</span><span class="s">'Institutions'</span><span class="p">].</span><span class="n">unique</span><span class="p">()</span>
+<span class="k">print</span><span class="p">(</span><span class="s">'Vecorizing the data - this could take a few minutes for large datasets...'</span><span class="p">)</span>
+
+<span class="n">vectorizer</span> <span class="o">=</span> <span class="n">TfidfVectorizer</span><span class="p">(</span><span class="n">min_df</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">analyzer</span><span class="o">=</span><span class="n">ngrams</span><span class="p">,</span> <span class="n">lowercase</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
+<span class="n">tfidf</span> <span class="o">=</span> <span class="n">vectorizer</span><span class="p">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">org_name_clean</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s">'Vecorizing completed...'</span><span class="p">)</span>
+
+<span class="kn">from</span> <span class="nn">sklearn.neighbors</span> <span class="kn">import</span> <span class="n">NearestNeighbors</span>
+
+<span class="n">nbrs</span> <span class="o">=</span> <span class="n">NearestNeighbors</span><span class="p">(</span><span class="n">n_neighbors</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">n_jobs</span><span class="o">=-</span><span class="mi">1</span><span class="p">).</span><span class="n">fit</span><span class="p">(</span><span class="n">tfidf</span><span class="p">)</span>
+<span class="n">org_column</span> <span class="o">=</span> <span class="s">'Company Name'</span> <span class="c1">#column to match against in the messy data
+</span><span class="n">unique_org</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="n">org_column</span><span class="p">].</span><span class="n">values</span><span class="p">)</span> <span class="c1"># set used for increased performance
+</span>
+<span class="o">&gt;</span> <span class="n">Vecorizing</span> <span class="n">the</span> <span class="n">data</span> <span class="o">-</span> <span class="n">this</span> <span class="n">could</span> <span class="n">take</span> <span class="n">a</span> <span class="n">few</span> <span class="n">minutes</span> <span class="k">for</span> <span class="n">large</span> <span class="n">datasets</span><span class="p">...</span>
+<span class="o">&gt;</span> <span class="n">Vecorizing</span> <span class="n">completed</span><span class="p">...</span>
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">### matching query:
+</span><span class="k">def</span> <span class="nf">getNearestN</span><span class="p">(</span><span class="n">query</span><span class="p">):</span>
+
+    <span class="n">queryTFIDF_</span> <span class="o">=</span> <span class="n">vectorizer</span><span class="p">.</span><span class="n">transform</span><span class="p">(</span><span class="n">query</span><span class="p">)</span>
+
+    <span class="n">distances</span><span class="p">,</span> <span class="n">indices</span> <span class="o">=</span> <span class="n">nbrs</span><span class="p">.</span><span class="n">kneighbors</span><span class="p">(</span><span class="n">queryTFIDF_</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">distances</span><span class="p">,</span> <span class="n">indices</span>
+
+
+<span class="kn">import</span> <span class="nn">time</span>
+
+<span class="n">t1</span> <span class="o">=</span> <span class="n">time</span><span class="p">.</span><span class="n">time</span><span class="p">()</span>
+<span class="k">print</span><span class="p">(</span><span class="s">'getting nearest n...'</span><span class="p">)</span>
+<span class="n">distances</span><span class="p">,</span> <span class="n">indices</span> <span class="o">=</span> <span class="n">getNearestN</span><span class="p">(</span><span class="n">unique_org</span><span class="p">)</span>
+<span class="n">t</span> <span class="o">=</span> <span class="n">time</span><span class="p">.</span><span class="n">time</span><span class="p">()</span><span class="o">-</span><span class="n">t1</span>
+<span class="k">print</span><span class="p">(</span><span class="s">"COMPLETED IN:"</span><span class="p">,</span> <span class="n">t</span><span class="p">)</span>
+
+<span class="n">unique_org</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">unique_org</span><span class="p">)</span> <span class="c1">#need to convert back to a list
+</span><span class="k">print</span><span class="p">(</span><span class="s">'finding matches...'</span><span class="p">)</span>
+<span class="n">matches</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="k">for</span> <span class="n">i</span><span class="p">,</span><span class="n">j</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">indices</span><span class="p">):</span>
+
+    <span class="n">temp</span> <span class="o">=</span> <span class="p">[</span><span class="nb">round</span><span class="p">(</span><span class="n">distances</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">0</span><span class="p">],</span><span class="mi">2</span><span class="p">),</span> <span class="n">clean_org_names</span><span class="p">.</span><span class="n">values</span><span class="p">[</span><span class="n">j</span><span class="p">][</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">],</span><span class="n">unique_org</span><span class="p">[</span><span class="n">i</span><span class="p">]]</span>
+
+    <span class="n">matches</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="n">temp</span><span class="p">)</span>
+
+<span class="k">print</span><span class="p">(</span><span class="s">'Building data frame...'</span><span class="p">)</span>  
+<span class="n">matches</span> <span class="o">=</span> <span class="n">pd</span><span class="p">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">matches</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s">'Match confidence (lower is better)'</span><span class="p">,</span><span class="s">'Matched name'</span><span class="p">,</span><span class="s">'Origional name'</span><span class="p">])</span>
+<span class="k">print</span><span class="p">(</span><span class="s">'Done'</span><span class="p">)</span> 
+
+<span class="o">&gt;</span>   <span class="n">getting</span> <span class="n">nearest</span> <span class="n">n</span><span class="p">...</span>
+<span class="o">&gt;</span>    <span class="n">COMPLETED</span> <span class="n">IN</span><span class="p">:</span> <span class="mf">127.69566655158997</span>
+<span class="o">&gt;</span>    <span class="n">finding</span> <span class="n">matches</span><span class="p">...</span>
+<span class="o">&gt;</span>    <span class="n">Building</span> <span class="n">data</span> <span class="n">frame</span><span class="p">...</span>
+<span class="o">&gt;</span>    <span class="n">Done</span>
+
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">matches</span><span class="p">.</span><span class="n">head</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+</code></pre></div></div>
+
+<div>
+
+<style scoped="">
+
+    .dataframe tbody tr th:only-of-type {
+
+        vertical-align: middle;
+
+    }
+
+
+
+    .dataframe tbody tr th {
+
+        vertical-align: top;
+
+    }
+
+
+
+    .dataframe thead th {
+
+        text-align: right;
+
+    }
+
+</style>
+
+<table border="1" class="dataframe">
+
+  <thead>
+
+    <tr style="text-align: right;">
+
+      <th></th>
+
+      <th>Match confidence (lower is better)</th>
+
+      <th>Matched name</th>
+
+      <th>Origional name</th>
+
+    </tr>
+
+  </thead>
+
+  <tbody>
+
+    <tr>
+
+      <th>0</th>
+
+      <td>1.27</td>
+
+      <td>Bognor Regis Ltd</td>
+
+      <td>HOLLINGER REGINALD</td>
+
+    </tr>
+
+    <tr>
+
+      <th>1</th>
+
+      <td>1.22</td>
+
+      <td>Tarbert (Loch Fyne) Harbour</td>
+
+      <td>MCDADE HERBERT III</td>
+
+    </tr>
+
+    <tr>
+
+      <th>2</th>
+
+      <td>1.26</td>
+
+      <td>Geffrye Museum Trust Ltd</td>
+
+      <td>SCHULTZ JEFFREY L</td>
+
+    </tr>
+
+    <tr>
+
+      <th>3</th>
+
+      <td>1.15</td>
+
+      <td>Consumer Focus</td>
+
+      <td>EQUITY INVESTOR FUND FOCUS SERIES 7 DEFINED ASSET FUNDS</td>
+
+    </tr>
+
+    <tr>
+
+      <th>4</th>
+
+      <td>1.15</td>
+
+      <td>Sir John Soane’s Museum</td>
+
+      <td>HENDRICKS JOHN S</td>
+
+    </tr>
+
+    <tr>
+
+      <th>5</th>
+
+      <td>1.26</td>
+
+      <td>Social Fund</td>
+
+      <td>ARTHUR STREET FUND III L P</td>
+
+    </tr>
+
+    <tr>
+
+      <th>6</th>
+
+      <td>1.22</td>
+
+      <td>National Institute of Health and Care Excellence</td>
+
+      <td>GLOBAL PRIVATE EQUITY INSTITUTIONAL INVESTORS V OFFSHORE SPECIAL L.P.</td>
+
+    </tr>
+
+    <tr>
+
+      <th>7</th>
+
+      <td>1.26</td>
+
+      <td>Victoria and Albert Museum</td>
+
+      <td>EGGER ROBERT M JR</td>
+
+    </tr>
+
+    <tr>
+
+      <th>8</th>
+
+      <td>1.25</td>
+
+      <td>Barrow-in-Furness Borough Council</td>
+
+      <td>VESOTSKY BARRY</td>
+
+    </tr>
+
+    <tr>
+
+      <th>9</th>
+
+      <td>1.29</td>
+
+      <td>New Video Channel America LLC [USA] (s BBCW)</td>
+
+      <td>CLUB TUKI LLC</td>
+
+    </tr>
+
+  </tbody>
+
+</table>
+
+</div>
+
+<h3 id="finding-close-matches-through-getnearestn">Finding close matches through getNearestN</h3>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">matches</span><span class="p">.</span><span class="n">sort_values</span><span class="p">(</span><span class="s">'Match confidence (lower is better)'</span><span class="p">)</span>
+</code></pre></div></div>
+
+<table>
+  <thead>
+    <tr>
+      <th> </th>
+      <th>Match confidence (lower is better)</th>
+      <th>Matched name</th>
+      <th>Origional name</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>379235</td>
+      <td>0.00</td>
+      <td>National Westminster Bank plc</td>
+      <td>NATIONAL WESTMINSTER BANK PLC</td>
+    </tr>
+    <tr>
+      <td>3468</td>
+      <td>0.00</td>
+      <td>ABN Amro Bank NV</td>
+      <td>ABN AMRO BANK NV</td>
+    </tr>
+    <tr>
+      <td>142405</td>
+      <td>0.00</td>
+      <td>Granite Master Issuer plc</td>
+      <td>GRANITE MASTER ISSUER PLC</td>
+    </tr>
+    <tr>
+      <td>445428</td>
+      <td>0.00</td>
+      <td>Lloyds Bank plc</td>
+      <td>LLOYDS BANK PLC</td>
+    </tr>
+    <tr>
+      <td>412151</td>
+      <td>0.00</td>
+      <td>Ulster Bank Ltd</td>
+      <td>ULSTER BANK LTD</td>
+    </tr>
+    <tr>
+      <td>…</td>
+      <td>…</td>
+      <td>…</td>
+      <td>…</td>
+    </tr>
+    <tr>
+      <td>530293</td>
+      <td>1.34</td>
+      <td>Osel Enterprises Ltd</td>
+      <td>OSULLIVAN JOSEPH FX</td>
+    </tr>
+    <tr>
+      <td>454716</td>
+      <td>1.34</td>
+      <td>Southend-on-Sea Borough Council</td>
+      <td>GILLON JOSUA B</td>
+    </tr>
+    <tr>
+      <td>294838</td>
+      <td>1.34</td>
+      <td>Tarbert (Loch Fyne) Harbour</td>
+      <td>MYNET MEDYA YAYINCILIK ULUSLARARSI ELEKTRONIK BILGILENDIRME VE HABERLESME HIZMETLERI A S</td>
+    </tr>
+    <tr>
+      <td>218946</td>
+      <td>1.34</td>
+      <td>Microbiological Research Authority</td>
+      <td>FITZGERALD JOSEPH MICHAEL</td>
+    </tr>
+    <tr>
+      <td>526216</td>
+      <td>1.34</td>
+      <td>Microbiological Research Authority</td>
+      <td>MCDERMOTT MICHAEL P</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>657160 rows × 3 columns</p>
+
+<h1 id="in-summary-tf-idf-can-be-a-highly-effective-and-highly-performant-way-of-cleaning-deduping-and-matching-data-when-dealing-with-larger-record-counts">In summary, tf-idf can be a highly effective and highly performant way of cleaning, deduping and matching data when dealing with larger record counts.</h1>
+<p><strong>References</strong>
+http://towardsdatascience.com/natural-language-processing-for-fuzzy-string-matching-with-python-6632b7824c49,
+https://towardsdatascience.com/fuzzy-matching-at-scale-84f2bfd0c536,
+https://bergvca.github.io/2017/10/14/super-fast-string-matching.html</p>
+
+<html>
+<body>
+<p><font size="5" color="Red">If you like my kernel please consider upvoting it</font></p>
+<p><font size="4" color="Green">Don't hesitate to give your suggestions in the comment section</font></p>
+</body>
+</html>
+
+<h1 id="final">Final</h1>
+:ET

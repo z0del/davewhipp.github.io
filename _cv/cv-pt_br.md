@@ -15,12 +15,12 @@ Cientista de Dados, GAVB/Grupo Boticario <br/>
 
 ## Educação
 
-**Lic. Matemática**, 
-*Universidade Presbiteriana Mackenzie, <br/> 2020-atualmente, Uberlândia, MG, BR.<br/>*
+**Lic. Matemática**
+*<br/> Universidade Presbiteriana Mackenzie, 2020-atualmente<br/>*
 
 
-**BSc. Ciência da Computação (Interrompido)**,
-*Universidade Federal de Uberlândia, <br/> 2013-2017, Ubertândia, MG, BR.*
+**BSc. Ciência da Computação (Interrompido)**
+*<br/> Universidade Federal de Uberlândia, 2013-2017*
 
 ## Experiência
 
@@ -60,14 +60,14 @@ Modelagem de Financial Contagion e VaR(Value-at-Risk) usando Cópulas estatísti
 **Molecular Dynamics Simulation**<br/>
 *FACOM-UFU, Universidade Federal de Uberlândia, 2017*
 
-**Pesquisa operacional; Fundamentos da Inteligência artificial**<br/>
+**Pesquisa operacional; Fundamentos da Inteligência artificial;**<br/>
 **Algoritimos e estrutura de dados em programação funcional**<br/>
 *EngeComp-UFU, Universidade Federal de Uberlândia, 2014-2017*
 
 ### Monitor de classe
 
 **GBC033 - Programação Funcional** <br/>
-*FACOM-UFU, Universidade Federal de Uberlândia. 2015*
+*FACOM-UFU, Universidade Federal de Uberlândia, 2015*
 
 ## Treinamento Professional
 

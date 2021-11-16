@@ -15,12 +15,12 @@ Data Scientist, GAVB/Grupo Boticario <br/>
 
 ## Education
 
-**Lic. Mathematics**, 
-*Mackenzie Presbyterian University, <br/> 2020-present, Uberlândia, MG, BR.<br/>*
+**Lic. Mathematics**
+*<br/> Mackenzie Presbyterian University, 2020-present<br/>*
 
 
-**BSc. Computer Science (incomplete degree)**,
-*Federal University of Uberlandia, <br/> 2013-2017, Ubertândia, MG, BR.*
+**BSc. Computer Science (incomplete degree)**
+*<br/> Federal University of Uberlandia, 2013-2017*
 
 ## Experience
 
